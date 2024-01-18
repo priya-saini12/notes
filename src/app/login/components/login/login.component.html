@@ -1,0 +1,15 @@
+<div class="login">
+  <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field class="example-full-width">
+      <mat-label>User Name</mat-label>
+      <input type="text" matInput placeholder="Enetr user name" formControlName="username">
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field><br>
+    <button type="submit" mat-raised-button color="warn">Login</button><br><br>
+  </form>
+  <p>Don't have an account? <a routerLink="">Sign Up</a></p>
+</div>

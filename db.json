@@ -1,0 +1,66 @@
+{
+  "Notes": [
+    {
+      "title": "hello",
+      "description": "Priyaa",
+      "userId": "1",
+      "id": "96c1"
+    },
+    {
+      "id": "4c4b",
+      "title": "ff",
+      "description": "ffffff",
+      "userId": "1"
+    },
+    {
+      "title": "hello",
+      "description": "sulabh sharma.....",
+      "userId": "96c0",
+      "id": "2b49"
+    },
+    {
+      "title": "asdfghjkl",
+      "description": "asdfghjklqwertyuiopzxcvbnm..",
+      "userId": "beb3",
+      "id": "8688"
+    },
+    {
+      "id": "dd5c",
+      "title": "asdfgh",
+      "description": "aesrdtfuyiljkjgc",
+      "userId": "beb3"
+    },
+    {
+      "id": "74e7",
+      "title": "ccccccc",
+      "description": "ccccccc",
+      "userId": "beb3"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "name": "Priya",
+      "username": "priya_saini",
+      "password": "priya@123"
+    },
+    {
+      "id": "beb3",
+      "name": "piyu",
+      "username": "piyu_",
+      "password": "piyu123"
+    },
+    {
+      "id": "96c0",
+      "name": "Sulabh Sharma",
+      "username": "sulabh22",
+      "password": "test@123"
+    },
+    {
+      "id": "a3ab",
+      "name": "",
+      "username": "",
+      "password": ""
+    }
+  ]
+}

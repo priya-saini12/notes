@@ -1,0 +1,17 @@
+.addNote {
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 0 8px grey;
+  text-align: center;
+  padding: 30px;
+  left: 70%;
+  border-radius: 10px;
+  top: 50px;
+  position: relative;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}

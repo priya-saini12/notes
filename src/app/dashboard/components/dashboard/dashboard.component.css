@@ -1,0 +1,24 @@
+.addButton {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+}
+
+.dashboard {
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  max-width: 920px;
+  width: 100%;
+  padding: 50px;
+}
+
+.nav {
+  background-color: bisque;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}

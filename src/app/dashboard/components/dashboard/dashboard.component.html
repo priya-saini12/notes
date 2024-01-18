@@ -1,0 +1,19 @@
+<div class="nav">
+    <h3>Name: <span>{{user.name}}</span></h3>
+    <button mat-fab color="warn" aria-label="Example icon button with a heart icon" (click)="logout()">
+        <mat-icon>logout</mat-icon></button>
+</div>
+<div class="dashboard">
+    <div class="list">
+        <app-notes></app-notes>
+    </div>
+    <div class="add">
+        <router-outlet></router-outlet>
+    </div>
+    <span class="addButton">
+        <a routerLink="addnote">
+            <button mat-fab color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>add</mat-icon>
+            </button></a>
+    </span>
+</div>

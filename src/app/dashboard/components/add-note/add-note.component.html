@@ -1,0 +1,22 @@
+<div class="addNote">
+    <div class="top">
+        <h2>Add Note</h2>
+        <a routerLink="/dashboard">
+            <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>close</mat-icon>
+            </button></a>
+    </div>
+    <form [formGroup]="addNotes">
+        <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input type="text" matInput placeholder="Enter Title" formControlName="title">
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Enter Description" formControlName="description"></textarea>
+        </mat-form-field><br>
+        <button type="button" mat-raised-button color="primary" (click)="update()">Update</button>&nbsp;
+        <button type="submit" mat-raised-button color="primary" (click)="add()">Add</button>&nbsp;
+        <button type="button" mat-raised-button color="warn" (click)="clear()">Discard</button><br><br>
+    </form>
+</div>
