@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/crud.service';
@@ -16,18 +16,20 @@ export class LoginComponent {
     });
   }
   loginForm = new FormGroup({
-    username: new FormControl('', Validators.required),
+    userName: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
   login() {
-    this.user.forEach((element: { username: string; password: string }) => {
+    if (this.loginForm.invalid) {
+      return;
+    }
+    this.user.forEach((element: any) => {
       if (
-        element.username == this.loginForm.value.username &&
+        element.userName == this.loginForm.value.userName &&
         element.password == this.loginForm.value.password
       ) {
         alert('Login Successful');
         sessionStorage.setItem('user', JSON.stringify(element));
-
         this._route.navigateByUrl('/dashboard');
       }
     });

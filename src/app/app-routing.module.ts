@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './signup/components/signup/signup.component';
 import { LoginComponent } from './login/components/login/login.component';
 import { AuthGuard } from './Sharable/Auth/auth.guard';
+import { LoggedInGuard } from './Sharable/Auth/logged-in.guard';
 
 const routes: Routes = [
   { path: '', component: SignupComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate:[LoggedInGuard]},
   {
     path: 'dashboard',
     canActivate: [AuthGuard],

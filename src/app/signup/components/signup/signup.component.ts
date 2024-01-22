@@ -13,16 +13,18 @@ export class SignupComponent {
   hide = true;
   addForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    username: new FormControl('', Validators.required),
+    userName: new FormControl('', Validators.required),
     password: new FormControl('', [
       Validators.required,
       Validators.maxLength(8),
     ]),
   });
   add() {
-    this._service.createUser(this.addForm.value).subscribe((data) => {
-      //  console.log(data);
-      this._route.navigateByUrl('/login');
-    });
+    if (this.addForm.invalid) {
+      return;
+    }
+    this._service.createUser(this.addForm.value).subscribe();
+    alert("User Created");
+    this._route.navigateByUrl('/login');
   }
 }

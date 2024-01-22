@@ -24,40 +24,37 @@ export class AddNoteComponent implements OnInit {
       this.id = this._router.snapshot.paramMap.get('id');
       this._service.editById(this.id).subscribe((data) => {
         this.note = data;
-        // console.log(this.note);
         this.addNotes.get('title')?.setValue(this.note.title);
         this.addNotes.get('description')?.setValue(this.note.description);
       });
     }
   }
   add() {
+      if (this.addNotes.invalid) {
+        return;
+      }
     let user = JSON.parse(sessionStorage.getItem('user') || '');
-    // console.log(user.id);
-
     let notes = {
       title: this.addNotes.value.title,
       description: this.addNotes.value.description,
       userId: user.id,
     };
     this._service.addNote(notes).subscribe((data) => {
-      //     // console.log(data);
       this.clear();
-      //     // this._route.navigateByUrl('/dashboard');
     });
   }
   clear() {
-    // this.addNotes.get("title")?.setValue('');
-    // this.addNotes.get("description")?.setValue('');
     this.addNotes.reset();
   }
   update() {
+    if (this.addNotes.invalid) {
+      return;
+    }
     let updatedNote = {
       title: this.addNotes.value.title,
       description: this.addNotes.value.description,
       userId: this.note.userId,
     };
-    this._service.updateNote(this.id, updatedNote).subscribe((data) => {
-      // this.clear();
-    });
+    this._service.updateNote(this.id, updatedNote).subscribe();
   }
 }

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   constructor() {}
   isLoggedIn() {
-   const userData = sessionStorage.getItem('user');
+    const userData = sessionStorage.getItem('user');
     return userData;
   }
 }

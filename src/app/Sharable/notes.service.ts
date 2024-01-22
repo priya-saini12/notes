@@ -11,7 +11,7 @@ export class NotesService {
   addNote(note: any): Observable<any> {
     return this.http.post(this.url, note);
   }
-  getInfo(): Observable<any> {
+  getNotes(): Observable<any> {
     return this.http.get<any>(this.url);
   }
   deleteNote(id: any): Observable<any> {
@@ -24,7 +24,6 @@ export class NotesService {
       return this.http.get(this.url);
     }
   }
-
   updateNote(id: any, note: any): Observable<any> {
     return this.http.put<any>(this.url + '/' + id, note);
   }

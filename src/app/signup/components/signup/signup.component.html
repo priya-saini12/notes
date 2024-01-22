@@ -1,19 +1,19 @@
-<div class="signup">
+<div class="signUp">
     <h1>Signup</h1>
-    <form [formGroup]="addForm" (ngSubmit)="add()">
+    <form [formGroup]="addForm">
         <mat-form-field class="example-full-width">
             <mat-label>Name</mat-label>
             <input type="text" matInput placeholder="Name" formControlName="name">
         </mat-form-field><br>
         <mat-form-field class="example-full-width">
             <mat-label>User Name</mat-label>
-            <input type="text" matInput placeholder="User Name" formControlName="username">
+            <input type="text" matInput placeholder="User Name" formControlName="userName">
         </mat-form-field><br>
         <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
             <input type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field><br>
-        <button type="submit" mat-raised-button color="warn">Submit</button><br><br>
+        <button type="button" mat-raised-button color="warn" (click)="add()">Submit</button><br><br>
     </form>
     <p>Already have an account. <a routerLink="/login">Login</a></p>
 </div>

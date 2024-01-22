@@ -13,17 +13,13 @@ export class NotesComponent {
   notes: any[] = [];
   constructor(private _service: NotesService, private _route: Router) {
     this.user = JSON.parse(sessionStorage.getItem('user') || '');
-    // console.log(this.user.id);
-
-    this._service.getInfo().subscribe((data) => {
+    this._service.getNotes().subscribe((data) => {
       this.list = data;
-      // console.log(this.list);
       this.list.forEach((element: any) => {
         if (element.userId == this.user.id) {
           this.notes.push(element);
         }
       });
-      // console.log(this.notes);
     });
   }
   delete(id: any) {
@@ -33,7 +29,6 @@ export class NotesComponent {
   }
   edit(id: any) {
     this._service.editById(id).subscribe((dataById) => {
-      // console.log(dataById);
       this._route.navigate(['/dashboard/addnote', id]);
     });
   }
