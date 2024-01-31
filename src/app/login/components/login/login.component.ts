@@ -11,7 +11,7 @@ import { CrudService } from 'src/app/crud.service';
 export class LoginComponent {
   user: any;
   constructor(private _service: CrudService, private _route: Router) {
-    this._service.getUser().subscribe((data) => {
+    this._service.getUser().subscribe((data: any) => {
       this.user = data;
     });
   }
